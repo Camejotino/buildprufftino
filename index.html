@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fincas & Agroturismo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Descubre Nuestras Fincas</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#fincas">Nuestras Fincas</a></li>
+                    <li><a href="#contact">Reservas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2>Bienvenidos a Nuestro Paraíso Agrícola</h2>
+                <div class="about-content">
+                    <img src="finca-principal.jpg" alt="Finca Principal" class="profile-img">
+                    <p>Somos una comunidad de fincas dedicadas a ofrecer experiencias únicas de agroturismo. Nuestras tierras no solo producen alimentos de alta calidad, sino que también invitan a los visitantes a conectar con la naturaleza y conocer el corazón de la agricultura.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fincas" class="section">
+            <div class="container">
+                <h2>Nuestras Fincas</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Finca La Alegría</h3>
+                        <p>Experiencia inmersiva en cultivos de café. Aprende sobre el proceso de producción y disfruta de catas exclusivas.</p>
+                        <a href="#" class="btn">Conocer Más</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Finca El Mamoncillo</h3>
+                        <p>Ganadería sostenible y experiencias de ordeño. Paseos a caballo y contacto directo con animales de granja.</p>
+                        <a href="#" class="btn">Conocer Más</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Finca Las Maravillas</h3>
+                        <p>Cultivos 100% orgánicos. Talleres de agricultura, recolección de productos y cocina con ingredientes frescos.</p>
+                        <a href="#" class="btn">Conocer Más</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Reserva Tu Experiencia</h2>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Nombre Completo" required>
+                    <input type="email" name="email" placeholder="Correo Electrónico" required>
+                    <select name="finca" required>
+                        <option value="">Selecciona una Finca</option>
+                        <option value="alegría">Finca La Alegría</option>
+                        <option value="mamoncillo">Finca El Mamoncillo</option>
+                        <option value="maravillas">Finca Las Maravillas</option>
+                    </select>
+                    <input type="date" name="fecha" placeholder="Fecha de Visita" required>
+                    <textarea name="message" placeholder="Comentarios o Requerimientos Especiales" required></textarea>
+                    <button type="submit" class="btn">Reservar Ahora</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fincas & Agroturismo. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">TripAdvisor</a>
+            </div>
+        </div>
+    </footer>
+
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://camejotino.app.n8n.cloud/webhook/63f5c60b-cdac-4087-afa9-820343805dde/chat',
+            webhookConfig: {
+                method: 'POST',
+                headers: {}
+            },
+            target: '#n8n-chat',
+            mode: 'window',
+            chatInputKey: 'chatInput',
+            chatSessionKey: 'sessionId',
+            metadata: {},
+            showWelcomeScreen: false,
+            defaultLanguage: 'en',
+            initialMessages: [
+                'Hola 👋',
+                'Soy tu guía de agroturismo. ¿En qué puedo ayudarte hoy?'
+            ],
+            i18n: {
+                en: {
+                    title: 'Agroturismo',
+                    subtitle: "Estamos aquí para ayudarte a planear tu experiencia.",
+                    footer: '',
+                    getStarted: 'Nueva consulta',
+                    inputPlaceholder: 'Pregunta sobre nuestras fincas',
+                },
+            },
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
